@@ -32,7 +32,7 @@
                     <p>{{'Gift Status' | translate}}</p>
                     <h1 class="{{karigar_gift.gift_status }}">{{karigar_gift.gift_status}}</h1> 
                 </div>
-                <div class="content">
+                <!-- <div class="content">
                     <p>{{'Bank Name' | translate}}</p>
                     <h1>{{karigar_gift.bank_name | titlecase}}</h1> 
                 </div>
@@ -43,7 +43,7 @@
                 <div class="content" >
                     <p>{{'IFSC Code' | translate}}</p>
                     <h1>{{karigar_gift.ifsc_code}}</h1>
-                </div>
+                </div> -->
                 <div class="content" *ngIf="karigar_gift.receive_status">
                     <p>{{'Receive Status' | translate}}</p>
                     <h1 class="{{karigar_gift.receive_status}}">{{karigar_gift.receive_status}}</h1>
@@ -58,7 +58,7 @@
                         <h1>{{shipped_detail.transaction_no}}</h1>
                     </div>
                     <div class="content" *ngIf="shipped_detail.transfer_date">
-                        <p>{{'IFSC Code' | translate}}</p>
+                        <p>{{'Transfer Date' | translate}}</p>
                         <h1>{{shipped_detail.transfer_date | date : 'dd MMM yyyy'}}</h1>
                     </div>
                 </ng-container>
