@@ -126,7 +126,7 @@ export class HomePage {
       
     //   const options: PushOptions = {
     //     android: {
-    //       senderID:'849648964768'
+    //       senderID:'659136432620'
           
     //     },
     //     ios: {
@@ -678,7 +678,7 @@ export class HomePage {
             
         //     const options: PushOptions = {
         //         android: {
-        //             senderID:'893824522432',                },
+        //             senderID:'659136432620',                },
         //         ios: {
         //             alert: 'true',
         //             badge: true,
@@ -788,7 +788,7 @@ export class HomePage {
     
             const options: PushOptions = {
                 android: {
-                    senderID: '849648964768',
+                    senderID: '659136432620',
                     icon: './assets/imgs/logo_small',
                     forceShow:true
                 },

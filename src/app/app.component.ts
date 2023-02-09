@@ -382,7 +382,7 @@ export class MyApp {
 
         const options: PushOptions = {
             android: {
-                senderID: '849648964768',
+                senderID: '659136432620',
                 icon: './assets/imgs/logo_small',
                 forceShow:true
             },
