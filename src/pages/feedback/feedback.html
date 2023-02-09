@@ -53,7 +53,7 @@
 <ion-footer>
     <div class="chat-message" >
         <div class="relative">
-            <textarea type="text" placeholder="{{'Write something' | translate}}" name="feedback" #feedback="ngModel" [(ngModel)]="data.feedback">{{'Write something' | translate}}</textarea>
+            <textarea type="text" placeholder="{{'Write something' | translate}}"  class="smr_pr"   name="feedback" #feedback="ngModel" [(ngModel)]="data.feedback">{{'Write something' | translate}}</textarea>
             <a class="attachment" (click)="open_camera()"><i class="material-icons">attach_file</i></a>
         </div>
         <a class="send-btn" (click)="submitFeedback()"><i class="material-icons">send</i></a>
