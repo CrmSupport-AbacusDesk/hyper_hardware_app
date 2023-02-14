@@ -236,6 +236,9 @@ export class ProfilePage {
             console.log(r);
             this.loading.dismiss();
             this.karigar_detail=r['karigar'];
+            console.log(this.karigar_detail);
+
+            
             this.language=r['language'];
         });
     }
@@ -388,7 +391,11 @@ export class ProfilePage {
         //     this.loading.dismiss();
          
         // });
-        this.navCtrl.push(UpdateprofilePage,{'data':this.karigar_detail})
+        console.log(this.karigar_detail);
+        console.log(this.karigar_detail.profile);
+
+        
+        this.navCtrl.push(UpdateprofilePage,{'data':this.karigar_detail,'profile':this.karigar_detail.profile})
     }
     
     MobileNumber(event: any) {

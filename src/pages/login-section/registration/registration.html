@@ -34,7 +34,7 @@
                 <div class="left-part">
                     <p class="cls-circle" (click)="openeditprofile()">
                         <i class="material-icons" *ngIf="data.profile == ''">camera_alt</i>
-                        <img [src]="data.profile" *ngIf="data.profile" required>
+                        <img [src]="data.profile" *ngIf="data.profile !=''" required>
                     </p>
                 </div>
                 <div class="right-part cs-form ml0">
@@ -217,16 +217,16 @@
             <div class="cs-form">
                 <ion-list>
                     <ion-item class="cs-input" [ngClass]="{'error':f.submitted && parent_counter_name?.invalid}">
-                        <ion-label floating>{{'Shop Name'}}*</ion-label>
+                        <ion-label floating>{{'Shop Name' | translate}}*</ion-label>
                         <ion-input type="text" name="parent_counter_name " pattern="[a-zA-Z ]+" ng-pattern-restrict #parent_counter_name="ngModel" [(ngModel)]="data.parent_counter_name " required></ion-input>
                     </ion-item>
                     
                     <ion-item class="cs-input" [ngClass]="{'error':f.submitted && parent_counter_contact_person?.invalid}">
-                        <ion-label floating>{{'Dealer Name'}}*</ion-label>
+                        <ion-label floating>{{'Dealer Name' | translate}}*</ion-label>
                         <ion-input type="text" name="parent_counter_contact_person " #parent_counter_contact_person="ngModel" [(ngModel)]="data.parent_counter_contact_person" required></ion-input>
                     </ion-item>
                     <ion-item class="cs-input mb0" [ngClass]="{'error':f.submitted && parent_counter_mobile?.invalid}">
-                        <ion-label floating>{{'Mobile No'}}.*</ion-label>
+                        <ion-label floating>{{'Mobile No' | translate}}.*</ion-label>
                         <ion-input type="tel" name="parent_counter_mobile " #parent_counter_mobile="ngModel" [(ngModel)]="data.parent_counter_mobile" maxlength="10" minlength="10" required></ion-input>
                     </ion-item>
                     <!-- <ion-item class="cs-input">
@@ -239,7 +239,7 @@
 
 
         <div class="heading line" >
-            <p >{{'Bank Information'}}</p>
+            <p >{{'Bank Information' | translate}}</p>
         </div>
         
         <div class="ragistration-fields">
@@ -270,7 +270,7 @@
 
 
         <div class="heading line" >
-            <p >{{'Sales Person Information'}}</p>
+            <p >{{'Sales Person Information' | translate}}</p>
         </div>
         
         <div class="ragistration-fields">

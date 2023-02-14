@@ -10,6 +10,7 @@ import { Content } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 import { HomePage } from '../../home/home';
 import { CancelpolicyModalPage } from '../../cancelpolicy-modal/cancelpolicy-modal';
+import { ConstantProvider } from '../../../providers/constant/constant';
 
 
 @IonicPage()
@@ -35,13 +36,17 @@ export class RegistrationPage {
     today_date:any;
     whatsapp_mobile_no:any='';
     check:any;
+    uploadUrl:any='';
+
     // defaultSelectedRadio = "data.user_type=1";
     
     
-    constructor(public navCtrl: NavController, public toastCtrl: ToastController,public navParams: NavParams, public service:DbserviceProvider,public alertCtrl:AlertController ,public actionSheetController: ActionSheetController,private camera: Camera,private loadingCtrl:LoadingController,public modalCtrl: ModalController,private storage:Storage,public translate:TranslateService) {
+    constructor(public navCtrl: NavController, public toastCtrl: ToastController,public navParams: NavParams,public constant:ConstantProvider, public service:DbserviceProvider,public alertCtrl:AlertController ,public actionSheetController: ActionSheetController,private camera: Camera,private loadingCtrl:LoadingController,public modalCtrl: ModalController,private storage:Storage,public translate:TranslateService) {
         this.getstatelist();
         // this.data.gender="male";
         this.data.document_type='Aadhar Card';
+        this.uploadUrl = this.constant.upload_url;
+
         this.today_date = new Date().toISOString().slice(0,10);
         this.getcountery()
         

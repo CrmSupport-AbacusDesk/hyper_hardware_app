@@ -15,7 +15,7 @@
                 <div class="left-part">
                     <p class="cls-circle" (click)="openeditprofile()">
                         <i class="material-icons" *ngIf="data.profile == ''">camera_alt</i>
-                        <img [src]="uploadUrl+data.profile" *ngIf="data.profile" required>
+                        <img [src]=" profile_img ? uploadUrl+data.profile : data.profile" *ngIf="data.profile !=''" required>
                     </p>
                 </div>
                 <div class="right-part cs-form ml0">
