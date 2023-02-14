@@ -46,6 +46,7 @@ export class UpdateprofilePage {
     check:any;
     checkAddress:any={};
     isSame = false
+    profile_img: any;
     // defaultSelectedRadio = "data.user_type=1";
     
     
@@ -53,13 +54,24 @@ export class UpdateprofilePage {
 
         this.uploadUrl = this.constant.upload_url;
 
-
         this.getstatelist();
-        console.log(navParams.data.data);
-        this.data = navParams.data.data;
-        this.data.karigar_edit_id = navParams.data.data.id;
-        console.log(this.data.karigar_edit_id);
 
+            console.log(navParams.data.data);
+       
+        if(navParams.data.data){
+            this.data = navParams.data.data;
+            this.data.karigar_edit_id = navParams.data.data.id;
+            this.profile_img = navParams.data.data.id;
+    
+    
+            console.log(this.data.karigar_edit_id);
+        }
+            
+    
+        
+
+        console.log(this.data.karigar_edit_id);
+      
         this.checkAddress = JSON.parse( localStorage.getItem('karigarInfo'));
         if(this.checkAddress != null) { this.isSame = this.checkAddress["isSameAddress"];}
 
@@ -114,6 +126,7 @@ export class UpdateprofilePage {
     ok:any="";
     upl_file:any="";
     save_succ:any="";
+    mode:string='';
     karigar_status:any;
     ionViewDidLoad() {
         
@@ -123,8 +136,11 @@ export class UpdateprofilePage {
         console.log('ionViewDidLoad RegistrationPage');
         // this.data.mobile_no = this.navParams.get('mobile_no');
         this.lang = this.navParams.get('lang');
+        this.mode = this.navParams.get('mode')
         console.log(this.data.country)
-        
+        this.data.profile = this.navParams.get('profile');
+        console.log( this.uploadUrl+this.data.profile);
+
         console.log(this.data.mobile_no);
         this.data.profile='';
         // this.data.document_image='';
@@ -429,6 +445,7 @@ export class UpdateprofilePage {
         
         console.log(options);
         this.camera.getPicture(options).then((imageData) => {
+            this.profile_img ='',
             this.data.profile = 'data:image/jpeg;base64,' + imageData;
             console.log(this.data.profile);
         }, (err) => {
@@ -444,6 +461,7 @@ export class UpdateprofilePage {
         }
         console.log(options);
         this.camera.getPicture(options).then((imageData) => {
+            this.profile_img ='',
             this.data.profile = 'data:image/jpeg;base64,' + imageData;
             console.log(this.data.profile);
         }, (err) => {
